@@ -1,0 +1,14 @@
+remote="$1"
+url="$2"
+
+while read local_ref local_sha remote_ref remote_sha
+do
+	if [ remote = "stage"];
+	then
+		echo "remote is stage, running pre processing";
+	else
+		echo "remote is $remote, not running pre processing";
+	if
+done
+
+exit 0
