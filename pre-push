@@ -3,12 +3,16 @@ url="$2"
 
 while read local_ref local_sha remote_ref remote_sha
 do
-	if [ remote = "stage"];
+	if [ "$remote" = "stage" ];
 	then
 		echo "remote is stage, running pre processing";
+		mv test.txt test-stage.txt
+		git add test.txt test-stage.txt
+		git commit --author="PRE-PUSH <>" -m "Rename test.txt to test-stage.txt"
+		echo "Renamed test file"
 	else
 		echo "remote is $remote, not running pre processing";
-	if
+	fi
 done
 
 exit 0
